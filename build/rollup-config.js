@@ -38,16 +38,16 @@ export default {
 		name: 'Leaflet.markercluster',
 		sourcemap: true,
 		globals: {
-			"leaflet": "L"
+			"leaflet/dist/leaflet-src.esm": "L"
 		}
 	},
 	external: [
-		"leaflet"
+		"leaflet/dist/leaflet-src.esm"
 	],
 	plugins: [
 		release ? json() : rollupGitVersion(),
 		inject({
-			L: "leaflet"
+			L: "leaflet/dist/leaflet-src.esm"
 		})
 	],
 };
